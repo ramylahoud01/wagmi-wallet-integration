@@ -212,6 +212,20 @@ const sendTransaction = async () => {
 };
 ```
 
+## 🎯 Project Structure
+
+```
+src/
+├── App.jsx                    # Main app with wallet status display
+├── main.jsx                   # Wagmi configuration and providers setup
+├── components/
+│   ├── Header/
+│   │   └── AppBar.jsx        # Navigation bar with wallet buttons
+│   ├── CustomWalletButton/   # Your custom wallet connect component
+│   └── wagmiWallets.jsx      # Default Wagmi wallet component
+└── styles/                   # CSS files
+```
+
 ## 🚀 Getting Started
 
 1. Follow the installation steps above
