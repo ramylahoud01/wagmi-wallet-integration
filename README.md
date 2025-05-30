@@ -67,7 +67,7 @@ const connectors = connectorsForWallets(
     },
   ],
   {
-    appName: "Zealous App",
+    appName: "Nacho App",
     projectId,
   }
 );
@@ -251,10 +251,3 @@ npm start
 - Both custom and Wagmi-styled buttons are functional examples
 - Provider and signer examples are included for blockchain interactions
 
-## 🤝 Contributing
-
-Feel free to submit issues and enhancement requests!
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
