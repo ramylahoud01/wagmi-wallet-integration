@@ -67,7 +67,7 @@ const connectors = connectorsForWallets(
     },
   ],
   {
-    appName: "Zealous App",
+    appName: "Nacho App",
     projectId,
   }
 );
