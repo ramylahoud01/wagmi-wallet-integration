@@ -67,7 +67,7 @@ const connectors = connectorsForWallets(
     },
   ],
   {
-    appName: "Nacho App",
+    appName: "Zealous App",
     projectId,
   }
 );
@@ -86,6 +86,36 @@ const config = createConfig({
   chains: [mainnet], // Change to your preferred network
   transports: {
     [mainnet.id]: http(), // Update transport accordingly
+  },
+  // ... other config
+});
+```
+
+#### Adding a Custom Network
+If you want to add a custom network that's not available in Wagmi's chain list, define it like this:
+
+```javascript
+const KasplexTestnet = {
+  id: 167012,
+  name: "Kasplex Testnet",
+  iconUrl: "/images/kasplex.jpg",
+  iconBackground: "#fff",
+  nativeCurrency: { name: "Kaspa", symbol: "KAS", decimals: 18 },
+  rpcUrls: {
+    default: { http: ["https://rpc.kasplextest.xyz/"] },
+  },
+  blockExplorers: {
+    default: {
+      name: "KaxplexExplorer",
+      url: "https://frontend.kasplextest.xyz/",
+    },
+  },
+};
+
+const config = createConfig({
+  chains: [KasplexTestnet], // Use your custom network
+  transports: {
+    [KasplexTestnet.id]: http(),
   },
   // ... other config
 });
@@ -180,20 +210,6 @@ const sendTransaction = async () => {
     await tx.wait();
   }
 };
-```
-
-## 🎯 Project Structure
-
-```
-src/
-├── App.jsx                    # Main app with wallet status display
-├── main.jsx                   # Wagmi configuration and providers setup
-├── components/
-│   ├── Header/
-│   │   └── AppBar.jsx        # Navigation bar with wallet buttons
-│   ├── CustomWalletButton/   # Your custom wallet connect component
-│   └── wagmiWallets.jsx      # Default Wagmi wallet component
-└── styles/                   # CSS files
 ```
 
 ## 🚀 Getting Started
